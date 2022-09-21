@@ -8,7 +8,7 @@ from setuptools import find_packages, setup
 with open("README.md", mode="r", encoding="utf-8") as f:
     long_description = f.read()
 
-with open("requirements.txt", mode="r", encoding="utf-8") as f:
+with open("requirements.dev.txt") as f:
     requirements = f.read().splitlines()
 
 try:
