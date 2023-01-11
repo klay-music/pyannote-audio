@@ -20,14 +20,22 @@ class VAD:
 
     sr = 16000
 
-    def __init__(self, inference: Optional[Inference] = None):
-        pipeline = Pipeline.from_pretrained(HF_URI)
+    def __init__(
+        self,
+        auth_token: str,
+        onset: float = 0.5,
+        offset: float = 0.5,
+        min_duration_on: float = 0.1,
+        min_duration_off: float = 0.1,
+        inference: Optional[Inference] = None
+    ):
+        pipeline = Pipeline.from_pretrained(HF_URI, use_auth_token=auth_token)
         self.inference = pipeline._segmentation
         self.binarize = Binarize(
-            onset=0.5,
-            offset=0.5,
-            min_duration_on=0.1,
-            min_duration_off=0.1,
+            onset=onset,
+            offset=offset,
+            min_duration_on=min_duration_on,
+            min_duration_off=min_duration_off,
         )
 
     def __call__(self, signal: np.ndarray, sr: int) -> Annotation:
