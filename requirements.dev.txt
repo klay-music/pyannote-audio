@@ -1,12 +1,14 @@
 asteroid-filterbanks >=0.4
 einops >=0.3
 hmmlearn >=0.2.7
+huggingface_hub >= 0.10
 omegaconf >=2.1
 pyannote.core >=4.4
 pyannote.database >=4.1.1,<5.0
 pyannote.metrics >=3.2,<4.0
 pyannote.pipeline >=2.3,<3.0
 pytorch_metric_learning >=1.0.0
+pytorch_lightning >= 1.8
 semver >=2.10.2
 singledispatchmethod
 torch_audiomentations >= 0.11.0
